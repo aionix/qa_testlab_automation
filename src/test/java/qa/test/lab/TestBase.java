@@ -9,11 +9,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import qa.test.lab.pages.LoginPage;
+import qa.test.lab.pages.MainPage;
 
 public abstract class TestBase {
     public WebDriver wd;
     public WebDriverWait wait;
     protected LoginPage loginPage;
+    protected MainPage mainPage;
 
      WebDriver initDriver(String driver) {
         if (driver.equals("chrome")) {
@@ -32,6 +34,7 @@ public abstract class TestBase {
          initDriver("chrome");
          wait = new WebDriverWait(wd, 15);
          loginPage = new LoginPage(wd, wait);
+         mainPage = new MainPage(wd, wait);
          wd.manage().window().maximize();
          wd.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
     }
