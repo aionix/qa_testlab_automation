@@ -4,18 +4,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
+import qa.test.lab.pages.CategoriesPage;
 import qa.test.lab.pages.LoginPage;
 import qa.test.lab.pages.MainPage;
 
 public abstract class TestBase {
-    public WebDriver wd;
-    public WebDriverWait wait;
+    private WebDriver wd;
+    private WebDriverWait wait;
     protected LoginPage loginPage;
     protected MainPage mainPage;
+    protected CategoriesPage categoriesPage;
 
      WebDriver initDriver(String driver) {
         if (driver.equals("chrome")) {
@@ -35,6 +34,7 @@ public abstract class TestBase {
          wait = new WebDriverWait(wd, 15);
          loginPage = new LoginPage(wd, wait);
          mainPage = new MainPage(wd, wait);
+         categoriesPage = new CategoriesPage(wd, wait);
          wd.manage().window().maximize();
          wd.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
     }

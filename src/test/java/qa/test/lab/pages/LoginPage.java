@@ -27,7 +27,6 @@ public class LoginPage {
         driver.findElement(enterButton).click();
         wait.until(ExpectedConditions.presenceOfElementLocated(headerLogo));
 
-
     }
 
 

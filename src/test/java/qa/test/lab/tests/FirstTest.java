@@ -1,8 +1,8 @@
 package qa.test.lab.tests;
-import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.test.lab.TestBase;
-import qa.test.lab.pages.LoginPage;
+import static qa.test.lab.helpers.NumbersGenerator.*;
 
 public class FirstTest extends TestBase {
 
@@ -10,7 +10,7 @@ public class FirstTest extends TestBase {
     void loginAndLogoutTest(){
         loginPage.login();
         mainPage.logout();
-
-
 }
+
+
 }
