@@ -1,17 +1,14 @@
 package qa.test.lab.pages;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static java.lang.Thread.sleep;
-
 public class LoginPage {
-    private WebDriver driver;
+    private EventFiringWebDriver driver;
     private WebDriverWait wait;
 
-    public LoginPage(WebDriver driver, WebDriverWait wait){
+    public LoginPage(EventFiringWebDriver driver, WebDriverWait wait){
         this.driver = driver;
         this.wait = wait;
     }
