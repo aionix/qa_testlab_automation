@@ -33,7 +33,7 @@ public class MainPage {
         CategoriesPage categoriesPage = new CategoriesPage(driver, wait);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//ul[@class='submenu']/li/a[contains(text(), '"+subCategory+"')]"))));
         driver.findElement(By.xpath("//ul[@class='submenu']/li/a[contains(text(), '"+subCategory+"')]")).click();
-        wait.until(ExpectedConditions.elementToBeClickable(categoriesPage.addCategoryButton));
+        //wait.until(ExpectedConditions.elementToBeClickable(categoriesPage.addCategoryButton));
     }
 
 

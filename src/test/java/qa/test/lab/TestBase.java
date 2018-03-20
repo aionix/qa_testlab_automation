@@ -9,6 +9,7 @@ import org.testng.annotations.*;
 import qa.test.lab.pages.CategoriesPage;
 import qa.test.lab.pages.LoginPage;
 import qa.test.lab.pages.MainPage;
+import qa.test.lab.pages.ProductsPage;
 
 public abstract class TestBase {
     private EventFiringWebDriver wd;
@@ -16,12 +17,14 @@ public abstract class TestBase {
     protected LoginPage loginPage;
     protected MainPage mainPage;
     protected CategoriesPage categoriesPage;
+    protected ProductsPage productsPage;
 
      EventFiringWebDriver initDriver(String driver) {
         if (driver.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
             System.out.println("root path is: " + System.getProperty("user.dir"));
             wd =  new EventFiringWebDriver(new ChromeDriver()).register(new EventHandler());
+
         }else if (driver.equals("IE")){
             System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "/drivers/IEDriverServer.exe");
             wd = new EventFiringWebDriver(new InternetExplorerDriver()).register(new EventHandler());
@@ -36,6 +39,7 @@ public abstract class TestBase {
          loginPage = new LoginPage(wd, wait);
          mainPage = new MainPage(wd, wait);
          categoriesPage = new CategoriesPage(wd, wait);
+         productsPage = new ProductsPage(wd, wait);
          wd.manage().window().maximize();
          wd.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0/");
     }

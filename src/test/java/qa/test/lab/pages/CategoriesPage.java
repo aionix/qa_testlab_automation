@@ -35,6 +35,7 @@ public class CategoriesPage {
         driver.findElement(By.name("categoryFilter_name")).sendKeys(name);
         driver.findElement(By.id("submitFilterButtoncategory")).click();
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='panel-heading']"))));
+
         driver.findElement(By.xpath("//tr/td[@class='pointer'][contains(text(),'" + name + "')]"));
     }
 }
